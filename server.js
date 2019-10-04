@@ -5,8 +5,9 @@ const server = express();
 server.use(express.json());
 
 const projectRoute = require('./projectRoutes');
+const actionRoute = require('./actionRoutes');
 
-
+server.use('/apip/actions', actionRoute);
 server.use('/api/projects', projectRoute);
 //Test its running
 
