@@ -59,7 +59,12 @@ router.put('/:id', validateProjectId, (req, res) => {
 
 //Delete
 
-
+router.delete('/:id', validateProjectId, (req, res) => {
+    const id = req.params.id
+    Project.remove(id).then(() => {
+        res.status(200).json({ message: "deleted" })
+    })
+})
 
 //middleware
 function validateProjectId(req, res, next) {
