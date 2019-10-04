@@ -6,8 +6,8 @@ server.use(express.json());
 
 const projectRoute = require('./projectRoutes');
 
-server.use(logger);
-server.use('/api/projects', projectRoute)
+
+server.use('/api/projects', projectRoute);
 //Test its running
 
 server.get('/', (req, res) => {
@@ -16,10 +16,13 @@ server.get('/', (req, res) => {
 
 server.use(errorHandler);
 
+//Logger middleware
 function logger(req, res, next) {
     console.log(`${req.method} to ${req.path} at ${new Date().toISOString()}`)
     next()
 };
+
+server.use(logger);
 
 function errorHandler(err, req, res, next) {
     console.log(err)
