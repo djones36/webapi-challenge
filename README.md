@@ -26,7 +26,11 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+I learned express.Route()
+
+
 - [ ] Describe Middleware?
+Middleware is a function that is invoked before the crud opperation runs. Middleware is normally validation method to check if the data from the client is correct for the crud function to work. 
 
 - [ ] Describe a Resource?
 
